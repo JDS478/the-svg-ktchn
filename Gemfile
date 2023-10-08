@@ -33,6 +33,7 @@ gem "redis", ">= 4.0.1"
 gem 'bootstrap', '~> 5.3.1'
 gem 'sassc-rails'
 
+gem "haml-rails", "~> 2.0"
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 gem "bcrypt", "~> 3.1.7"
 
