@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_10_08_195456) do
+ActiveRecord::Schema[7.1].define(version: 2023_10_08_195927) do
+  create_table "basket_items", force: :cascade do |t|
+    t.integer "basket_id", null: false
+    t.integer "product_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["basket_id"], name: "index_basket_items_on_basket_id"
+    t.index ["product_id"], name: "index_basket_items_on_product_id"
+  end
+
+  create_table "baskets", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_baskets_on_user_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -33,4 +49,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_08_195456) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "basket_items", "baskets"
+  add_foreign_key "basket_items", "products"
+  add_foreign_key "baskets", "users"
 end
