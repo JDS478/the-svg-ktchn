@@ -15,6 +15,25 @@
  */
 @import 'bootstrap';
 
+html {
+  background-color: #fffdf8;
+}
+
+nav {
+  background-color: #113946;
+  height: 10vh;
+  border-bottom: #E5D283;
+}
+
+#sk-logo {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'Petit Formal Script', cursive;
+  color: white;
+}
+
+.site-link {
+  color: white;
+}
 
 // *Colour Scheme*
 // #FFF2D8 Cream
